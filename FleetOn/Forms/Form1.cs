@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FleetOn.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,42 @@ namespace FleetOn
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void AbrirUserControl(UserControl uc)
+        {
+            // Limpa o painel principal antes de abrir outro
+            pnlPrincipal.Controls.Clear();
+
+            // Ajusta o tamanho do UserControl para ocupar o painel
+            uc.Dock = DockStyle.Fill;
+
+            // Adiciona o UserControl no painel principal
+            pnlPrincipal.Controls.Add(uc);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirUserControl(new ucMotorista());
+        }
+
+        private void btnVeiculo_Click(object sender, EventArgs e)
+        {
+            AbrirUserControl(new ucVeiculo());
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            AbrirUserControl(new ucCliente());
+        }
+
+        private void btnViagem_Click(object sender, EventArgs e)
+        {
+            AbrirUserControl(new ucViagem());
+        }
+
+        private void btnFinanceiro_Click(object sender, EventArgs e)
+        {
+            AbrirUserControl(new ucFinanceiro());
         }
     }
 }
