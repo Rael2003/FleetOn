@@ -18,10 +18,15 @@ namespace FleetOn.Forms
             InitializeComponent();
             forms = form;
         }
-
+        
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            this.forms.AbrirUserControl(new ucMotorista(this.forms));
+        }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.forms.AbrirUserControl(new ucMotorista(this.forms));
         }
     }
 }

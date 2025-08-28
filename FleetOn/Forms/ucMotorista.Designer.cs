@@ -85,6 +85,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ucMotorista";
             this.Size = new System.Drawing.Size(501, 345);
+            this.Load += new System.EventHandler(this.ucMotorista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbMotorista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

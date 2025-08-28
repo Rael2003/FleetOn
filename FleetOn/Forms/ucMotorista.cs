@@ -47,5 +47,10 @@ namespace FleetOn.Forms
         {
             this.forms.AbrirUserControl(new ucMotoristaDigitar(this.forms));
         }
+
+        private void ucMotorista_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
