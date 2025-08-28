@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\MotoristaController.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +71,12 @@
     <Compile Include="Forms\ucMotorista.Designer.cs">
       <DependentUpon>ucMotorista.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucMotoristaDigitar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucMotoristaDigitar.Designer.cs">
+      <DependentUpon>ucMotoristaDigitar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ucVeiculo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,8 +89,13 @@
     <Compile Include="Forms\ucViagem.Designer.cs">
       <DependentUpon>ucViagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IMotoristaRepository.cs" />
+    <Compile Include="Interfaces\IMotoristaService.cs" />
+    <Compile Include="Models\Motorista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\MotoristaRepository.cs" />
+    <Compile Include="Services\MotoristaService.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucMotorista.resx">
       <DependentUpon>ucMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucMotoristaDigitar.resx">
+      <DependentUpon>ucMotoristaDigitar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucVeiculo.resx">
       <DependentUpon>ucVeiculo.cs</DependentUpon>
@@ -121,11 +136,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

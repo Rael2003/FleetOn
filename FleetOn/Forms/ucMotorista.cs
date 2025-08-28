@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FleetOn.Controllers;
+using FleetOn.Models;
+using FleetOn.Repositories;
+using FleetOn.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +16,36 @@ namespace FleetOn.Forms
 {
     public partial class ucMotorista : UserControl
     {
-        public ucMotorista()
+        private Form1 forms;
+        private readonly MotoristaController _controller;
+        public ucMotorista(Form1 form)
         {
+            forms = form;
             InitializeComponent();
+
+            // Inicialização das camadas
+            var repo = new MotoristaRepository();
+            var service = new MotoristaService(repo);
+            _controller = new MotoristaController(service);
+
+            carregarDados();
+        }
+
+        private void carregarDados()
+        {
+            IEnumerable<Motorista> motoristas = _controller.ConsultarMotoristas();
+
+            tbMotorista.Rows.Clear();
+            foreach (Motorista item in motoristas)
+            {
+                tbMotorista.Rows.Add();
+                tbMotorista.Rows[tbMotorista.Rows.Count - 1].Cells[0].Value = item.Nome;
+            }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            this.forms.AbrirUserControl(new ucMotoristaDigitar(this.forms));
         }
     }
 }

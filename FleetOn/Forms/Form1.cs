@@ -18,7 +18,7 @@ namespace FleetOn
             InitializeComponent();
         }
 
-        private void AbrirUserControl(UserControl uc)
+        public void AbrirUserControl(UserControl uc)
         {
             // Limpa o painel principal antes de abrir outro
             pnlPrincipal.Controls.Clear();
@@ -31,7 +31,7 @@ namespace FleetOn
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirUserControl(new ucMotorista());
+            AbrirUserControl(new ucMotorista(this));
         }
 
         private void btnVeiculo_Click(object sender, EventArgs e)
