@@ -37,5 +37,10 @@ namespace FleetOn.Repositories
         {
             return _motoristas.Where(m => m.Ativo);
         }
+
+        public void PostMotorista(Motorista m)
+        {
+            _motoristas.Add(m);
+        }
     }
 }

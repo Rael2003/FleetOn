@@ -33,7 +33,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCNH = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -81,19 +81,19 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "CNH";
             // 
-            // textBox1
+            // txtCNH
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtCNH.Location = new System.Drawing.Point(184, 144);
+            this.txtCNH.Name = "txtCNH";
+            this.txtCNH.Size = new System.Drawing.Size(100, 20);
+            this.txtCNH.TabIndex = 4;
             // 
             // ucMotoristaDigitar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCNH);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnCancelar);
@@ -112,6 +112,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCNH;
     }
 }

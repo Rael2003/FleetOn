@@ -12,5 +12,7 @@ namespace FleetOn.Interfaces
         Motorista BuscarPorId(int id);
         IEnumerable<Motorista> ListarTodos();
         IEnumerable<Motorista> ListarAtivos();
+        void AdicionarMotorista(Motorista motorista);
+        int BuscarUltimo();
     }
 }

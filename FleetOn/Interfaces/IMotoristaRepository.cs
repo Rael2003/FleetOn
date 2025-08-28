@@ -12,5 +12,6 @@ namespace FleetOn.Interfaces
         Motorista GetById(int id);
         IEnumerable<Motorista> GetAll();
         IEnumerable<Motorista> GetAtivos();
+        void PostMotorista(Motorista motorista);
     }
 }

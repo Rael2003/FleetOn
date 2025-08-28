@@ -17,7 +17,7 @@ namespace FleetOn.Forms
     public partial class ucMotorista : UserControl
     {
         private Form1 forms;
-        private readonly MotoristaController _controller;
+        private MotoristaController _controller;
         public ucMotorista(Form1 form)
         {
             forms = form;
@@ -38,8 +38,7 @@ namespace FleetOn.Forms
             tbMotorista.Rows.Clear();
             foreach (Motorista item in motoristas)
             {
-                tbMotorista.Rows.Add();
-                tbMotorista.Rows[tbMotorista.Rows.Count - 1].Cells[0].Value = item.Nome;
+                tbMotorista.Rows.Add(item.Nome);
             }
         }
 

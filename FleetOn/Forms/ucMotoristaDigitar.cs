@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FleetOn.Controllers;
+using FleetOn.Models;
+using FleetOn.Repositories;
+using FleetOn.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +17,23 @@ namespace FleetOn.Forms
     public partial class ucMotoristaDigitar : UserControl
     {
         Form1 forms;
+        private MotoristaController _controller;
         public ucMotoristaDigitar(Form1 form)
         {
+            // Inicialização das camadas
+            var repo = new MotoristaRepository();
+            var service = new MotoristaService(repo);
+            _controller = new MotoristaController(service);
+
             InitializeComponent();
             forms = form;
         }
         
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            Motorista m = new Motorista(txtNome.Text,txtCNH.Text);
+
+            _controller.AdicionarMotorista(m);
             this.forms.AbrirUserControl(new ucMotorista(this.forms));
         }
 

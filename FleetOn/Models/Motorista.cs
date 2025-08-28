@@ -13,5 +13,14 @@ namespace FleetOn.Models
         public string Cnh { get; set; }
         public bool Ativo { get; set; }
 
+        public Motorista(string nome,string cnh)
+        {
+            this.Id = 0;
+            this.Nome = nome;
+            this.Cnh = cnh;
+            this.Ativo = true;
+        }
+
+        public Motorista() { }
     }
 }
