@@ -1,5 +1,4 @@
 ﻿using FleetOn.Controllers;
-using FleetOn.Interfaces;
 using FleetOn.Models;
 using FleetOn.Repositories;
 using FleetOn.Services;
@@ -15,11 +14,11 @@ using System.Windows.Forms;
 
 namespace FleetOn.Forms
 {
-    public partial class ucVeiculo : UserControl
+    public partial class ucVeiculoDigitar : UserControl
     {
         Form1 forms;
         VeiculoController _controller;
-        public ucVeiculo(Form1 form)
+        public ucVeiculoDigitar(Form1 form)
         {
             InitializeComponent();
             forms = form;
@@ -28,24 +27,23 @@ namespace FleetOn.Forms
             var repo = new VeiculoRepository();
             var service = new VeiculoService(repo);
             _controller = new VeiculoController(service);
-
-            carregarDados();
         }
 
-        public void carregarDados()
+        private void ucVeiculoDigitar_Load(object sender, EventArgs e)
         {
-            IEnumerable<Veiculo> veiculos = _controller.ConsultarVeiculos();
 
-            tbVeiculo.Rows.Clear();
-            foreach (Veiculo item in veiculos)
-            {
-                tbVeiculo.Rows.Add(item.NomeVeiculo, item.Placa);
-            }
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            forms.AbrirUserControl(new ucVeiculoDigitar(forms));
+            Veiculo v = new Veiculo(0, txtVeiculo.Text, txtPlaca.Text, true);
+            _controller.AdicionarVeiculo(v);
+            forms.AbrirUserControl(new ucVeiculo(forms));
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            forms.AbrirUserControl(new ucVeiculo(forms));
         }
     }
 }

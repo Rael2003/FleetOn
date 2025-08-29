@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\MotoristaController.cs" />
+    <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,12 @@
     <Compile Include="Forms\ucVeiculo.Designer.cs">
       <DependentUpon>ucVeiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucVeiculoDigitar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucVeiculoDigitar.Designer.cs">
+      <DependentUpon>ucVeiculoDigitar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ucViagem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,11 +98,16 @@
     </Compile>
     <Compile Include="Interfaces\IMotoristaRepository.cs" />
     <Compile Include="Interfaces\IMotoristaService.cs" />
+    <Compile Include="Interfaces\IVeiculoRepository.cs" />
+    <Compile Include="Interfaces\IVeiculoService.cs" />
     <Compile Include="Models\Motorista.cs" />
+    <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MotoristaRepository.cs" />
+    <Compile Include="Repositories\VeiculoRepository.cs" />
     <Compile Include="Services\MotoristaService.cs" />
+    <Compile Include="Services\VeiculoService.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucVeiculo.resx">
       <DependentUpon>ucVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucVeiculoDigitar.resx">
+      <DependentUpon>ucVeiculoDigitar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
