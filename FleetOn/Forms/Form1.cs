@@ -41,7 +41,7 @@ namespace FleetOn
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            AbrirUserControl(new ucCliente());
+            AbrirUserControl(new ucCliente(this));
         }
 
         private void btnViagem_Click(object sender, EventArgs e)

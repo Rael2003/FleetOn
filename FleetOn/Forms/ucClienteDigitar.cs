@@ -14,37 +14,32 @@ using System.Windows.Forms;
 
 namespace FleetOn.Forms
 {
-    public partial class ucCliente : UserControl
+    public partial class ucClienteDigitar : UserControl
     {
-        private Form1 forms;
+        Form1 forms;
         private ClienteController _controller;
-        public ucCliente(Form1 form)
+        public ucClienteDigitar(Form1 form)
         {
-            forms = form;
-            InitializeComponent();
-
             // Inicialização das camadas
             var repo = new ClienteRepository();
             var service = new ClienteService(repo);
             _controller = new ClienteController(service);
 
-            carregarDados();
+            InitializeComponent();
+            forms = form;
         }
 
-        private void carregarDados()
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            IEnumerable<Cliente> Clientes = _controller.ConsultarClientes();
+            Cliente m = new Cliente(0,txtNome.Text, txtCNH.Text, true);
 
-            tbCliente.Rows.Clear();
-            foreach (Cliente item in Clientes)
-            {
-                tbCliente.Rows.Add(item.Nome);
-            }
+            _controller.AdicionarCliente(m);
+            this.forms.AbrirUserControl(new ucCliente(this.forms));
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.forms.AbrirUserControl(new ucClienteDigitar(this.forms));
+            this.forms.AbrirUserControl(new ucCliente(this.forms));
         }
     }
 }
