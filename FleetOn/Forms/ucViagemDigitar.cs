@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace FleetOn.Forms
 {
-    public partial class ucViagem : UserControl
+    public partial class ucViagemDigitar : UserControl
     {
-        private Form1 forms;
-        public ucViagem(Form1 forms)
+        Form1 form;
+        public ucViagemDigitar(Form1 form)
         {
             InitializeComponent();
-            this.forms = forms;
+            this.form = form;
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void ucViagemDigitar_Load(object sender, EventArgs e)
         {
-            this.forms.AbrirUserControl(new ucViagemDigitar(this.forms));
+
         }
     }
 }
