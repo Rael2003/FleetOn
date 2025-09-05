@@ -26,5 +26,10 @@ namespace FleetOn.Controllers
             Cliente.Id = _ClienteService.BuscarUltimo() + 1;
             _ClienteService.AdicionarCliente(Cliente);
         }
+
+        public Cliente BuscarCliente(int id)
+        {
+            return _ClienteService.BuscarPorId(id);
+        }
     }
 }

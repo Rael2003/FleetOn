@@ -9,11 +9,25 @@ namespace FleetOn.Models
     public class Viagem
     {
         public int Id { get; set; }
-        public Cliente cliente {  get; set; }
+        public Cliente cliente { get; set; }
         public Motorista motorista { get; set; }
         public DateTime date { get; set; }
         public string localCarga { get; set; }
-        public bool Ativo {  get; set; }
+        public bool Ativo { get; set; }
 
+        public Viagem(){}
+
+        public Viagem(int id, Cliente cli, Motorista mot, DateTime date,bool ativo)
+        {
+            this.Id = Id;
+            this.date = date;
+            this.cliente = cli;
+            this.motorista = mot;
+            this.Ativo = ativo;
+            
+        }
     }
+
+    
+
 }

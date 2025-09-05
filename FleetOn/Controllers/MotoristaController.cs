@@ -27,5 +27,10 @@ namespace FleetOn.Controllers
             motorista.Id = _motoristaService.BuscarUltimo() + 1;
             _motoristaService.AdicionarMotorista(motorista);
         }
+
+        public Motorista BuscarMotorista(int id)
+        {
+            return _motoristaService.BuscarPorId(id);
+        }
     }
 }
