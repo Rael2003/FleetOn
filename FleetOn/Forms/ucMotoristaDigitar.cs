@@ -31,7 +31,7 @@ namespace FleetOn.Forms
         
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Motorista m = new Motorista(txtNome.Text,txtCNH.Text);
+            Motorista m = new Motorista(txtNome.Text,txtCNH.Text, txtCategoria.Text);
 
             _controller.AdicionarMotorista(m);
             this.forms.AbrirUserControl(new ucMotorista(this.forms));

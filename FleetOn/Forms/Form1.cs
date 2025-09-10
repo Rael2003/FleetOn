@@ -16,6 +16,7 @@ namespace FleetOn
         public Form1()
         {
             InitializeComponent();
+            ConectarBanco();
         }
 
         public void AbrirUserControl(UserControl uc)
@@ -28,6 +29,12 @@ namespace FleetOn
 
             // Adiciona o UserControl no painel principal
             pnlPrincipal.Controls.Add(uc);
+        }
+
+        public void ConectarBanco()
+        {
+            var version = PostgresHelper.ExecuteScalar("SELECT version()")?.ToString();
+            Console.WriteLine("PostgreSQL conectado: " + version);
         }
         private void button1_Click(object sender, EventArgs e)
         {

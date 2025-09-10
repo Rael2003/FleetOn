@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCNH = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -71,7 +73,7 @@
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Location = new System.Drawing.Point(184, 118);
+            this.txtNome.Location = new System.Drawing.Point(226, 118);
             this.txtNome.MaximumSize = new System.Drawing.Size(229, 20);
             this.txtNome.MinimumSize = new System.Drawing.Size(229, 20);
             this.txtNome.Name = "txtNome";
@@ -110,7 +112,7 @@
             this.txtCNH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCNH.Location = new System.Drawing.Point(184, 144);
+            this.txtCNH.Location = new System.Drawing.Point(226, 144);
             this.txtCNH.MaximumSize = new System.Drawing.Size(100, 20);
             this.txtCNH.MinimumSize = new System.Drawing.Size(100, 20);
             this.txtCNH.Name = "txtCNH";
@@ -118,10 +120,36 @@
             this.txtCNH.TabIndex = 4;
             this.txtCNH.TextChanged += new System.EventHandler(this.txtCNH_TextChanged);
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(143, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Categoria CNH";
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCategoria.Location = new System.Drawing.Point(226, 170);
+            this.txtCategoria.MaximumSize = new System.Drawing.Size(100, 20);
+            this.txtCategoria.MinimumSize = new System.Drawing.Size(100, 20);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
+            this.txtCategoria.TabIndex = 6;
+            // 
             // ucMotoristaDigitar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCNH);
             this.Controls.Add(this.label1);
@@ -143,5 +171,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCNH;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCategoria;
     }
 }

@@ -11,14 +11,16 @@ namespace FleetOn.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Cnh { get; set; }
+        public string Categoria_cnh { get; set; }
         public bool Ativo { get; set; }
 
-        public Motorista(string nome,string cnh)
+        public Motorista(string nome,string cnh, string categoria_cnh)
         {
             this.Id = 0;
             this.Nome = nome;
             this.Cnh = cnh;
             this.Ativo = true;
+            this.Categoria_cnh = categoria_cnh;
         }
 
         public Motorista() { }
