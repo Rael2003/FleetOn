@@ -1,7 +1,9 @@
 ﻿using FleetOn.Interfaces;
 using FleetOn.Models;
+using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,18 +13,6 @@ namespace FleetOn.Repositories
     public class ClienteRepository:IClienteRepository
     {
         private readonly List<Cliente> _Clientes;
-
-        public ClienteRepository()
-        {
-            // Simulação de dados (poderia vir de banco)
-            _Clientes = new List<Cliente>
-        {
-            new Cliente { Id = 1, Nome = "Carlos Silva", Doc = "123456789", Ativo = true },
-            new Cliente { Id = 2, Nome = "Maria Souza", Doc = "987654321", Ativo = false },
-            new Cliente { Id = 3, Nome = "João Pereira", Doc = "555444333", Ativo = true }
-        };
-        }
-
         public Cliente GetById(int id)
         {
             return _Clientes.FirstOrDefault(m => m.Id == id);
@@ -30,17 +20,54 @@ namespace FleetOn.Repositories
 
         public IEnumerable<Cliente> GetAll()
         {
-            return _Clientes;
+            var lista = new List<Cliente>();
+
+            string sql = "SELECT id_Cliente, nome, cnh FROM clientes";
+
+            var dt = PostgresHelper.GetDataTable(sql);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                lista.Add(new Cliente
+                {
+                    Id = (int)row["id_Cliente"],
+                    Nome = row["nome"].ToString(),
+                    Doc = row["documento"].ToString()
+                });
+            }
+
+            return lista;
         }
 
         public IEnumerable<Cliente> GetAtivos()
         {
-            return _Clientes.Where(m => m.Ativo);
+            var lista = new List<Cliente>();
+
+            string sql = "SELECT id_Cliente, nome, documento FROM clientes";
+
+            var dt = PostgresHelper.GetDataTable(sql);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                lista.Add(new Cliente
+                {
+                    Id = (int)row["id_Cliente"],
+                    Nome = row["nome"].ToString(),
+                    Doc = row["documento"].ToString()
+                });
+            }
+
+            return lista;
         }
 
         public void PostCliente(Cliente m)
         {
-            _Clientes.Add(m);
+            string sql = "INSERT INTO clientes (nome, documento) VALUES (@nome, @documento)";
+
+            PostgresHelper.ExecuteScalar(sql,
+                new NpgsqlParameter("@nome", m.Nome),
+                new NpgsqlParameter("@documento", m.Doc)
+            );
         }
     }
 }
