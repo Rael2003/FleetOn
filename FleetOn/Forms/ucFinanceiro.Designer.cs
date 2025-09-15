@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbFinanceiro = new System.Windows.Forms.DataGridView();
             this.cData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cViagens = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cValorRecebido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,10 +38,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblRecebido = new System.Windows.Forms.Label();
+            this.lblGasto = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFinanceiro)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,19 +53,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Financeiro";
             // 
-            // dataGridView1
+            // tbFinanceiro
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tbFinanceiro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbFinanceiro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cData,
             this.cViagens,
             this.cValorRecebido,
             this.cValorGasto,
             this.cTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(658, 279);
-            this.dataGridView1.TabIndex = 1;
+            this.tbFinanceiro.Location = new System.Drawing.Point(3, 58);
+            this.tbFinanceiro.Name = "tbFinanceiro";
+            this.tbFinanceiro.Size = new System.Drawing.Size(658, 279);
+            this.tbFinanceiro.TabIndex = 1;
             // 
             // cData
             // 
@@ -119,49 +119,49 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Total:";
             // 
-            // label5
+            // lblRecebido
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(108, 340);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "0";
+            this.lblRecebido.AutoSize = true;
+            this.lblRecebido.Location = new System.Drawing.Point(108, 340);
+            this.lblRecebido.Name = "lblRecebido";
+            this.lblRecebido.Size = new System.Drawing.Size(13, 13);
+            this.lblRecebido.TabIndex = 5;
+            this.lblRecebido.Text = "0";
             // 
-            // label6
+            // lblGasto
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(353, 340);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "0";
+            this.lblGasto.AutoSize = true;
+            this.lblGasto.Location = new System.Drawing.Point(353, 340);
+            this.lblGasto.Name = "lblGasto";
+            this.lblGasto.Size = new System.Drawing.Size(13, 13);
+            this.lblGasto.TabIndex = 6;
+            this.lblGasto.Text = "0";
             // 
-            // label7
+            // lblTotal
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(595, 340);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "0";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(595, 340);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "0";
             // 
             // ucFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblGasto);
+            this.Controls.Add(this.lblRecebido);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tbFinanceiro);
             this.Controls.Add(this.label1);
             this.Name = "ucFinanceiro";
             this.Size = new System.Drawing.Size(664, 385);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFinanceiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,7 +170,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tbFinanceiro;
         private System.Windows.Forms.DataGridViewTextBoxColumn cData;
         private System.Windows.Forms.DataGridViewTextBoxColumn cViagens;
         private System.Windows.Forms.DataGridViewTextBoxColumn cValorRecebido;
@@ -179,8 +179,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblRecebido;
+        private System.Windows.Forms.Label lblGasto;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

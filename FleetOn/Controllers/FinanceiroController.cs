@@ -13,8 +13,12 @@ namespace FleetOn.Controllers
     public class FinanceiroController
     {
         private readonly IFinanceiroService _financeiroService;
+        public FinanceiroController(IFinanceiroService FinanceiroService)
+        {
+            _financeiroService = FinanceiroService;
+        }
 
-        public IEnumerable<FinanceiroDTO> ConsultarMotoristas()
+        public IEnumerable<FinanceiroDTO> ConsultarFinanceiro()
         {
             return _financeiroService.BuscarFinanceiro();
         }

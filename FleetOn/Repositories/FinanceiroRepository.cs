@@ -19,7 +19,7 @@ namespace FleetOn.Repositories
         {
             var lista = new List<FinanceiroDTO>();
 
-            string sql = "SELECT id_financeiro, id_viagem, valor FROM motoristas";
+            string sql = "SELECT id_financeiro, id_viagem, valor FROM financeiro";
 
             var dt = PostgresHelper.GetDataTable(sql);
 

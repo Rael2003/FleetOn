@@ -58,7 +58,7 @@ namespace FleetOn
 
         private void btnFinanceiro_Click(object sender, EventArgs e)
         {
-            AbrirUserControl(new ucFinanceiro());
+            AbrirUserControl(new ucFinanceiro(this));
         }
     }
 }
