@@ -38,13 +38,34 @@ namespace FleetOn.Forms
             tbCliente.Rows.Clear();
             foreach (Cliente item in Clientes)
             {
-                tbCliente.Rows.Add(item.Nome);
+                tbCliente.Rows.Add(item.Id,item.Nome);
             }
+        }
+
+        private void deletar()
+        {
+            //Console.WriteLine(tbCliente.CurrentRow.Cells[0].Value);
+            _controller.DeletaCliente((int)tbCliente.CurrentRow.Cells[0].Value);
+        }
+
+        private void atualizar()
+        {
+            this.forms.AbrirUserControl(new ucClienteDigitar(this.forms, (int)tbCliente.CurrentRow.Cells[0].Value));
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             this.forms.AbrirUserControl(new ucClienteDigitar(this.forms));
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deletar();
+        }
+
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            atualizar();
         }
     }
 }

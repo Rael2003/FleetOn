@@ -13,5 +13,7 @@ namespace FleetOn.Interfaces
         IEnumerable<Cliente> GetAll();
         IEnumerable<Cliente> GetAtivos();
         void PostCliente(Cliente Cliente);
+        void DeleteCliente(int id);
+        void UpdateCliente(int id,  Cliente Cliente);
     }
 }

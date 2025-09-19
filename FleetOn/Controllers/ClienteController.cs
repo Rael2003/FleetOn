@@ -31,5 +31,15 @@ namespace FleetOn.Controllers
         {
             return _ClienteService.BuscarPorId(id);
         }
+
+        public void DeletaCliente(int id)
+        {
+            _ClienteService.DeletaCliente(id);
+        }
+
+        public void AtualizaCliente(int id, Cliente cliente)
+        {
+            _ClienteService.AtualizaCliente(id,cliente);
+        }
     }
 }

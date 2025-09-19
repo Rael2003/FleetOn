@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbCliente = new System.Windows.Forms.DataGridView();
+            this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbCliente)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbCliente
@@ -42,17 +48,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cId,
             this.cCliente});
+            this.tbCliente.ContextMenuStrip = this.contextMenuStrip1;
             this.tbCliente.Location = new System.Drawing.Point(0, 40);
             this.tbCliente.Name = "tbCliente";
             this.tbCliente.Size = new System.Drawing.Size(676, 343);
             this.tbCliente.TabIndex = 0;
+            // 
+            // cId
+            // 
+            this.cId.HeaderText = "Id";
+            this.cId.Name = "cId";
             // 
             // cCliente
             // 
             this.cCliente.HeaderText = "Cliente";
             this.cCliente.Name = "cCliente";
             this.cCliente.ReadOnly = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alterarToolStripMenuItem,
+            this.excluirToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarToolStripMenuItem.Text = "Alterar";
+            this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // btnAdicionar
             // 
@@ -86,6 +121,7 @@
             this.Name = "ucCliente";
             this.Size = new System.Drawing.Size(677, 384);
             ((System.ComponentModel.ISupportInitialize)(this.tbCliente)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,8 +130,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView tbCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cCliente;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCliente;
     }
 }

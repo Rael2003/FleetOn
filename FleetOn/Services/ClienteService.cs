@@ -41,5 +41,15 @@ namespace FleetOn.Services
         {
             return _repository.GetAll().Count();
         }
+
+        public void DeletaCliente(int id)
+        {
+            _repository.DeleteCliente(id);
+        }
+
+        public void AtualizaCliente(int id, Cliente cliente)
+        {
+            _repository.UpdateCliente(id, cliente);
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace FleetOn.Forms
     public partial class ucClienteDigitar : UserControl
     {
         Form1 forms;
+        int id = 0;
         private ClienteController _controller;
         public ucClienteDigitar(Form1 form)
         {
@@ -29,12 +30,41 @@ namespace FleetOn.Forms
             forms = form;
         }
 
+        public ucClienteDigitar(Form1 form, int id)
+        {
+            // Inicialização das camadas
+            var repo = new ClienteRepository();
+            var service = new ClienteService(repo);
+            _controller = new ClienteController(service);
+
+            InitializeComponent();
+            forms = form;
+            this.id = id;
+            carregarDados();
+        }
+
+        private void carregarDados()
+        {
+            Cliente Clientes = _controller.BuscarCliente(this.id);
+
+            txtCNH.Text = Clientes.Doc.ToString();
+            txtNome.Text = Clientes.Nome.ToString();
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Cliente m = new Cliente(0,txtNome.Text, txtCNH.Text, true);
+            Cliente m = new Cliente(this.id,txtNome.Text, txtCNH.Text, true);
 
-            _controller.AdicionarCliente(m);
-            this.forms.AbrirUserControl(new ucCliente(this.forms));
+            if (this.id.Equals(0))
+            {
+                _controller.AdicionarCliente(m);
+            }
+            else
+            {
+                _controller.AtualizaCliente(this.id, m);
+            }
+                this.forms.AbrirUserControl(new ucCliente(this.forms));
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

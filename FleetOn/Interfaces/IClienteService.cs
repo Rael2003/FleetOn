@@ -14,5 +14,7 @@ namespace FleetOn.Interfaces
         IEnumerable<Cliente> ListarAtivos();
         void AdicionarCliente(Cliente Cliente);
         int BuscarUltimo();
+        void DeletaCliente(int id);
+        void AtualizaCliente(int id, Cliente cliente);
     }
 }
