@@ -32,5 +32,15 @@ namespace FleetOn.Controllers
         {
             return _motoristaService.BuscarPorId(id);
         }
+
+        public void DeletaMotorista(int id)
+        {
+            _motoristaService.DeletaMotorista(id);
+        }
+
+        public void AtualizaMotorista(int id, Motorista Motorista)
+        {
+            _motoristaService.AtualizaMotorista(id, Motorista);
+        }
     }
 }

@@ -38,8 +38,19 @@ namespace FleetOn.Forms
             tbMotorista.Rows.Clear();
             foreach (Motorista item in motoristas)
             {
-                tbMotorista.Rows.Add(item.Nome);
+                tbMotorista.Rows.Add(item.Id,item.Nome);
             }
+        }
+
+        private void deletar()
+        {
+            //Console.WriteLine(tbCliente.CurrentRow.Cells[0].Value);
+            _controller.DeletaMotorista((int)tbMotorista.CurrentRow.Cells[0].Value);
+        }
+
+        private void atualizar()
+        {
+            this.forms.AbrirUserControl(new ucMotoristaDigitar(this.forms, (int)tbMotorista.CurrentRow.Cells[0].Value));
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -50,6 +61,16 @@ namespace FleetOn.Forms
         private void ucMotorista_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            atualizar();
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deletar();
         }
     }
 }

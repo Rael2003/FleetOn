@@ -14,5 +14,7 @@ namespace FleetOn.Interfaces
         IEnumerable<Motorista> ListarAtivos();
         void AdicionarMotorista(Motorista motorista);
         int BuscarUltimo();
+        void DeletaMotorista(int id);
+        void AtualizaMotorista(int id, Motorista motorista);
     }
 }

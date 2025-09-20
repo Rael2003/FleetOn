@@ -18,6 +18,7 @@ namespace FleetOn.Forms
     {
         Form1 forms;
         private MotoristaController _controller;
+        int id = 0;
         public ucMotoristaDigitar(Form1 form)
         {
             // Inicialização das camadas
@@ -28,12 +29,41 @@ namespace FleetOn.Forms
             InitializeComponent();
             forms = form;
         }
-        
+        public ucMotoristaDigitar(Form1 form, int id)
+        {
+            // Inicialização das camadas
+            var repo = new MotoristaRepository();
+            var service = new MotoristaService(repo);
+            _controller = new MotoristaController(service);
+
+            InitializeComponent();
+            forms = form;
+            this.id = id;
+            carregarDados();
+        }
+
+        private void carregarDados()
+        {
+            Motorista Motoristas = _controller.BuscarMotorista(this.id);
+
+            txtCNH.Text = Motoristas.Cnh.ToString();
+            txtNome.Text = Motoristas.Nome.ToString();
+            txtCategoria.Text = Motoristas.Categoria_cnh.ToString();
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Motorista m = new Motorista(txtNome.Text,txtCNH.Text, txtCategoria.Text);
+            Motorista m = new Motorista(this.id,txtNome.Text,txtCNH.Text, txtCategoria.Text);
 
-            _controller.AdicionarMotorista(m);
+            if (this.id.Equals(0))
+            {
+                _controller.AdicionarMotorista(m);
+            }
+            else
+            {
+                _controller.AtualizaMotorista(this.id, m);
+            }
+                
             this.forms.AbrirUserControl(new ucMotorista(this.forms));
         }
 

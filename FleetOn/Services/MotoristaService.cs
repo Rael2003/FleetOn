@@ -41,5 +41,15 @@ namespace FleetOn.Services
         {
             return _repository.GetAll().Count();  
         }
+
+        public void DeletaMotorista(int id)
+        {
+            _repository.DeleteMotorista(id);
+        }
+
+        public void AtualizaMotorista(int id, Motorista Motorista)
+        {
+            _repository.UpdateMotorista(id, Motorista);
+        }
     }
 }
