@@ -18,6 +18,8 @@ namespace FleetOn.Forms
     {
         Form1 forms;
         VeiculoController _controller;
+        int id = 0;
+
         public ucVeiculoDigitar(Form1 form)
         {
             InitializeComponent();
@@ -29,6 +31,27 @@ namespace FleetOn.Forms
             _controller = new VeiculoController(service);
         }
 
+        public ucVeiculoDigitar(Form1 form, int id)
+        {
+            InitializeComponent();
+            forms = form;
+
+            // Inicialização das camadas
+            var repo = new VeiculoRepository();
+            var service = new VeiculoService(repo);
+            _controller = new VeiculoController(service);
+            this.id = id;
+            carregarDados();
+        }
+
+        private void carregarDados()
+        {
+            Veiculo Veiculos = _controller.ConsultarVeiculo(this.id);
+
+            txtPlaca.Text = Veiculos.Placa.ToString();
+            txtVeiculo.Text = Veiculos.NomeVeiculo.ToString();
+        }
+
         private void ucVeiculoDigitar_Load(object sender, EventArgs e)
         {
 
@@ -37,8 +60,15 @@ namespace FleetOn.Forms
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             Veiculo v = new Veiculo(0, txtVeiculo.Text, txtPlaca.Text, true);
-            _controller.AdicionarVeiculo(v);
-            forms.AbrirUserControl(new ucVeiculo(forms));
+            if (this.id.Equals(0))
+            {
+                _controller.AdicionarVeiculo(v);
+            }
+            else
+            {
+                _controller.AtualizaVeiculo(this.id, v);
+            }
+                forms.AbrirUserControl(new ucVeiculo(forms));
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

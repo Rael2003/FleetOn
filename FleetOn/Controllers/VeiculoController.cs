@@ -22,10 +22,25 @@ namespace FleetOn.Controllers
             return _veiculoService.ListarAtivos();
         }
 
-        public void AdicionarVeiculo(Veiculo motorista)
+        public Veiculo ConsultarVeiculo(int id)
         {
-            motorista.Id = _veiculoService.BuscarUltimo() + 1;
-            _veiculoService.AdicionarMotorista(motorista);
+            return _veiculoService.BuscarPorId(id);
+        }
+
+        public void AdicionarVeiculo(Veiculo Veiculo)
+        {
+            Veiculo.Id = _veiculoService.BuscarUltimo() + 1;
+            _veiculoService.AdicionarVeiculo(Veiculo);
+        }
+
+        public void DeletaVeiculo(int id)
+        {
+            _veiculoService.DeletaVeiculo(id);
+        }
+
+        public void AtualizaVeiculo(int id, Veiculo Veiculo)
+        {
+            _veiculoService.AtualizaVeiculo(id, Veiculo);
         }
     }
 }

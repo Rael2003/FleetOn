@@ -32,14 +32,24 @@ namespace FleetOn.Services
             return _repository.GetAtivos();
         }
 
-        public void AdicionarMotorista(Veiculo motorista)
+        public void AdicionarVeiculo(Veiculo Veiculo)
         {
-            _repository.PostVeiculo(motorista);
+            _repository.PostVeiculo(Veiculo);
         }
 
         public int BuscarUltimo()
         {
             return _repository.GetAll().Count();
+        }
+
+        public void DeletaVeiculo(int id)
+        {
+            _repository.DeleteVeiculo(id);
+        }
+
+        public void AtualizaVeiculo(int id, Veiculo Veiculo)
+        {
+            _repository.UpdateVeiculo(id, Veiculo);
         }
     }
 }

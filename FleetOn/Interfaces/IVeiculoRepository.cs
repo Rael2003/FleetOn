@@ -12,6 +12,8 @@ namespace FleetOn.Interfaces
         Veiculo GetById(int id);
         IEnumerable<Veiculo> GetAll();
         IEnumerable<Veiculo> GetAtivos();
-        void PostVeiculo(Veiculo motorista);
+        void PostVeiculo(Veiculo Veiculo);
+        void DeleteVeiculo(int id);
+        void UpdateVeiculo(int id, Veiculo Veiculo);
     }
 }

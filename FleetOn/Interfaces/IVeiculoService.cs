@@ -12,7 +12,9 @@ namespace FleetOn.Interfaces
         Veiculo BuscarPorId(int id);
         IEnumerable<Veiculo> ListarTodos();
         IEnumerable<Veiculo> ListarAtivos();
-        void AdicionarMotorista(Veiculo motorista);
+        void AdicionarVeiculo(Veiculo Veiculo);
         int BuscarUltimo();
+        void DeletaVeiculo(int id);
+        void AtualizaVeiculo(int id, Veiculo Veiculo);
     }
 }
