@@ -55,6 +55,9 @@
             // 
             // tbFinanceiro
             // 
+            this.tbFinanceiro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFinanceiro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbFinanceiro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cData,
@@ -94,6 +97,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 340);
             this.label2.Name = "label2";
@@ -103,6 +107,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(287, 340);
             this.label3.Name = "label3";
@@ -112,6 +117,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(558, 340);
             this.label4.Name = "label4";
@@ -121,6 +127,7 @@
             // 
             // lblRecebido
             // 
+            this.lblRecebido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecebido.AutoSize = true;
             this.lblRecebido.Location = new System.Drawing.Point(108, 340);
             this.lblRecebido.Name = "lblRecebido";
@@ -130,6 +137,7 @@
             // 
             // lblGasto
             // 
+            this.lblGasto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGasto.AutoSize = true;
             this.lblGasto.Location = new System.Drawing.Point(353, 340);
             this.lblGasto.Name = "lblGasto";
@@ -139,6 +147,7 @@
             // 
             // lblTotal
             // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Location = new System.Drawing.Point(595, 340);
             this.lblTotal.Name = "lblTotal";
